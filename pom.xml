@@ -88,6 +88,11 @@
     	<artifactId>spring-webmvc</artifactId>
     	<version>${spring.version}</version>
     </dependency>
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-context-support</artifactId>
+    	<version>${spring.version}</version>
+    </dependency>
   	
     <!-- alibaba fast json -->
     <dependency>
@@ -167,6 +172,18 @@
     	<groupId>c3p0</groupId>
     	<artifactId>c3p0</artifactId>
     	<version>0.9.1</version>
+    </dependency>
+    <!-- rapid framework -->
+    <dependency>
+    	<groupId>cn.org.rapid-framework</groupId>
+    	<artifactId>rapid-framework</artifactId>
+    	<version>3.9.3</version>
+    </dependency>
+    <!-- webapp 视图 freemarker -->
+    <dependency>
+    	<groupId>org.freemarker</groupId>
+    	<artifactId>freemarker</artifactId>
+    	<version>2.3.20</version>
     </dependency>
   </dependencies>
 </project>
