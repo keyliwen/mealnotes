@@ -15,5 +15,14 @@ public class AppFreeMarkerView extends FreeMarkerView{
 			throws Exception {
 		super.renderMergedTemplateModel(model, request, response);
 	}
+
+	@Override
+	protected void exposeHelpers(Map<String, Object> model,
+			HttpServletRequest request) throws Exception {
+		super.exposeHelpers(model, request);
+		String path=request.getContextPath();
+		model.put("basePath",path);
+	}
+	
 	
 }

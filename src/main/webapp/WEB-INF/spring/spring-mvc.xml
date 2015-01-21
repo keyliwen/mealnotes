@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-3.1.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-3.1.xsd
+">
+	<!-- enables @Autowired annotation -->
+	<context:annotation-config />
+	<!-- scan packages and autowire beans automatically (no need to declare beans manually) -->
+	<!-- 限制mvc的扫描路径只在controller包下，解决在mvc初始化加载时重新建立spring容器 -->
+    <context:component-scan base-package="com.mealnotes.app.controller">
+    	<context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/>
+    </context:component-scan> 
+    <mvc:annotation-driven />
+    <!-- 静态资源访问配置 -->
+    <mvc:resources mapping="/css/**" location="/assets/css/"/>
+    <mvc:resources mapping="/img/**" location="/assets/img/"/>
+    <mvc:resources mapping="/js/**" location="/assets/js/"/>
+    <!-- 解析Freemarker视图 -->
+    <bean name="viewResolver" class="org.springframework.web.servlet.view.freemarker.FreeMarkerViewResolver">
+        <property name="requestContextAttribute" value="rc"/>
+        <property name="suffix" value=".ftl"/>
+        <property name="viewClass" value="com.mealnotes.app.view.AppFreeMarkerView"/>
+        <property name="contentType" value="text/html;charset=utf-8"/>
+        <property name="exposeSpringMacroHelpers" value="true"></property>
+        <property name="exposeRequestAttributes" value="true"></property>
+        <property name="exposeSessionAttributes" value="true"></property>
+    </bean>
+</beans>
