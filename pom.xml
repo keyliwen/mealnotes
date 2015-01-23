@@ -39,8 +39,14 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
+    </dependency>
+    <!-- spring 单元测试 -->
+    <dependency>
+    	<groupId>org.springframework</groupId>
+    	<artifactId>spring-test</artifactId>
+    	<version>${spring.version}</version>
     </dependency>
     <!-- spring 模块类库 -->
     <dependency>
