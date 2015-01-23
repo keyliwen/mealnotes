@@ -1,7 +1,8 @@
 <@override name="head_include">
 </@override>
 <@override name="body_include">
-	HELLO WORLD
+	HELLO ${username!}
+	<a href="${basePath}/logout">注销</a>
 </@override>
 <@override name="foot_include">
 </@override>
