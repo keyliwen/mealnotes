@@ -108,6 +108,11 @@
     	<artifactId>spring-security-config</artifactId>
     	<version>${spring.version}</version>
     </dependency>
+   	<dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-taglibs</artifactId>
+    	<version>${spring.version}</version>
+    </dependency>
     <!-- alibaba fast json -->
     <dependency>
 		<groupId>com.alibaba</groupId>
